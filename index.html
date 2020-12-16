@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <Link rel='stylesheet' href='style.css'>
+    <Link rel='stylesheet' href='menu.css'>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>Portfólio</title>
 </head>
 <body>
-    
+    <main>
+        <div class="container">   
+            <header class="header">
+                <nav class="menu"> 
+                    <input type="checkbox" id="bt_menu" onclick="Open()">
+                    <label for="bt_menu">&#9776;</label>
+                
+                    <a href="/index.html" class="principal">JV</a>
+                    
+                    <ul class="links">
+                        <li><a href="/index.html" class="itens">Inicio</a></li>
+                        <li><a href="#sobre" class="itens">Sobre</a></li>
+                        <li><a href="#Portfolio" class="itens">Portfólio</a></li>
+                        <li><a href="#contato" class="itens">Contatos</a></li>
+                    </ul>
+                </nav>
+                <div class="img-wrapper">
+                    <img src="assets/capaDeveloper.jpg" alt='developer'>
+                </div>
+                <div class="banner">
+                    <h1>Web Developer & Front End Designer</h1>
+                    <p>João Victor</p>
+                    <button>Saiba mais</button>
+                </div>
+            </header> 
+        </div>
+    </main>
 </body>
 </html>
