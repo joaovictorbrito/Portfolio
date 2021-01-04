@@ -6,6 +6,12 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --font-primary: 'Roboto', sans-serif;
+    --font-secundary: 'Josefin Slab', sans-serif;
+    --font-action: 'Poppins', sans-serif;
+}
 .container {
     position: relative;
 }
@@ -22,7 +28,7 @@ header{
     background-repeat: no-repeat;
     background-position: 30% 45%;
     background-size: cover;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-primary);
     display: flex;
     justify-content: space-between;
     align-items: center;  
@@ -36,13 +42,24 @@ header{
 }
 .menu a {
     padding: 10px;
-    margin-right: 7px;
+    
     font-size: 14pt;
     display: block;
     text-decoration: none;
     text-align: center;
     color: #ffffff;
     
+}
+.links {
+    font-size: 13pt;
+    display: flex;  
+    overflow: hidden;
+}
+.menu-desktop{
+    margin-left: 5%;
+}
+.links-desktop{
+    margin-right: 60px;
 }
 .menu a:hover {
     color: rgb(235,230,141);
@@ -53,9 +70,8 @@ ul li::marker{
 }
 label[for="bt_menu"]{
     padding: 5px;
-    background-color: #070707;
     color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-primary);
     text-align: center;
     font-size: 45px;
     position: fixed;
@@ -76,11 +92,6 @@ label[for="bt_menu"]{
     display: none;
 }
 
-.links {
-    margin-right: 390px;
-    font-size: 13pt;
-    display: flex;   
-}
 .img-wrapper{
     top: 0;
     width: 100%;
@@ -89,7 +100,6 @@ label[for="bt_menu"]{
     /* background-image: url('assets/capaDeveloper.jpg'); */
 
     background-color: rgba(0,0,0,0.8);
-    
 }
 .img-wrapper img{
     width: 100%;
@@ -110,13 +120,12 @@ label[for="bt_menu"]{
     position: absolute;
     top: 40%;
     left: 10%;
-    
 }
 
 .banner h1 {
     color: #ffffff;
     font-size: 34pt;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-primary);
     font-weight: 500;
     text-shadow: .3rem .4rem 2px rgba(0,0,0,.4);
     line-height: 3.5rem;
@@ -130,26 +139,16 @@ label[for="bt_menu"]{
     color: #ffffff;
     font-size: 26pt;
     font-weight: 500;
-    font-family: 'Josefin Slab', sans-serif;
+    font-family: var(--font-secundary);
     text-shadow: .3rem .4rem 2px rgba(0,0,0,.4);
     margin-bottom: 2.6rem;
     animation: moveBanner 1.5s forwards;
     opacity: 0;
 }
-.banner button {
-    padding: 8px 40px;
-    color: #ffffff;
-    font-size: 15pt;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-family: 'Poppins', 'serif';
-    background: -webkit-linear-gradient(to right, #c74545, #e20101);
-    background: linear-gradient(to left, #c74545, #e20101);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+
+
+.blob-btn{
     animation: moveBanner 1.9s forwards;
-    opacity: 0;
 }
 @keyframes moveBanner{
     0%{
@@ -160,6 +159,110 @@ label[for="bt_menu"]{
         opacity: 1;
     }
 }
+
+.sidebar {
+    width: 20rem;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: -40rem; 
+    z-index: 10;
+    transition: all 1s;
+    display: none;
+}
+
+.sidebar.show-menu{
+    right: 0;
+}
+.closed {
+    top: 15px;
+    margin-top: 12px;
+    margin-left: 15px;
+    position: relative;
+}
+.iconFechar{
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.closed span {
+    position: absolute;
+    left: 3.5rem;
+    width: 6rem;
+    height: 2rem;
+    margin-top: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0505A9;
+    color: #fff;
+    font-family: var(--font-action);
+    font-size: 1rem;
+    
+}
+
+.closed span::before {
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #0505A9;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -.9rem;
+}
+
+
+.menu-link-mobile {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.menu-item {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.menu-link {
+    text-decoration: none;
+    font-family: var(--font-action);
+    font-size: 20pt;
+    font-weight: 500;
+    color: rgb(17, 17, 17);
+    transition: color 1s;
+}
+
+.menu-link:hover{
+    color: #0505A9;
+}
+
+.social-media-mobile {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.social-media-mobile i{
+    background-color: #2828cc;
+    color: rgb(255, 255, 255);
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
+}
+
+.social-media-mobile i:hover{
+    background-color: #0505A9;
+}
 .banner button:focus {
     transition: 18s;
     background: linear-gradient(to left, #e20101, #c74545);
@@ -168,8 +271,11 @@ label[for="bt_menu"]{
     box-shadow: none;
 }
 
+
 @media(max-width: 912px){
-   
+   .sidebar{
+       display: block;
+   }
     #content-capa {   
         width: 100vw;
         height: 110vh;
@@ -182,11 +288,10 @@ label[for="bt_menu"]{
         background-position-y: center;
     }
 
-
     label[for="bt_menu"]{
         display: block;
-      
-        cursor: pointer
+        cursor: pointer;
+        
     }
     
     #bt_menu:checked ~ .menu {
@@ -252,5 +357,11 @@ label[for="bt_menu"]{
         /* opacity: 0.8; */
         font-family: 'Roboto', sans-serif;
         
+    }
+}
+
+@media (max-width: 700px){
+    .sidebar{
+        width: 100%;
     }
 }

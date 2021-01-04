@@ -1,17 +1,7 @@
-function Open(){ 
-    var nav = document.querySelector('.menu-mobile')
-    nav.classList.add("menu_open");
-   
-}
-function Closed(){
-    var nav2 = document.querySelector('.menu-mobile')
-    nav2.classList.remove("menu_open");
-}
-function Passar() {
-    var cor = document.querySelector('.git').style.color ='black';
-    
-}
+document.querySelector(".bt-mobile").addEventListener("click", () =>
+    document.querySelector(".sidebar").classList.toggle("show-menu")
+)
 
-function Sair() {
-    var cor = document.querySelector('.git').style.color ='white'
-}
+document.querySelector(".iconFechar").addEventListener("click", () =>
+    document.querySelector(".sidebar").classList.toggle("show-menu")
+)

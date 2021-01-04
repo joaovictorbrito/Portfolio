@@ -13,20 +13,32 @@
 </head>
 <body>
     <main>
-        <div class="container">   
+        <div class="container">  
+            <div class="hamburguer">
+                <div class="line" id="line1"></div>
+                <div class="line" id="line2"></div>
+                <div class="line" id="line3"></div>
+    
+            </div>
             <header class="header">
                 <nav class="menu"> 
-                    <input type="checkbox" id="bt_menu" onclick="Open()">
+                    <input type="checkbox" id="bt_menu" class="bt-mobile">
                     <label for="bt_menu">&#9776;</label>
-                
+                    
                     <a href="/index.html" class="principal">JV</a>
                     
-                    <ul class="links">
-                        <li><a href="/index.html" class="itens">Inicio</a></li>
+                    <ul class="links menu-desktop">
+                        <li><a href="/index.html" class="itens">Home</a></li>
                         <li><a href="#sobre" class="itens">Sobre</a></li>
                         <li><a href="#Portfolio" class="itens">Portfólio</a></li>
                         <li><a href="#contato" class="itens">Contatos</a></li>
                     </ul>
+                    <div class="social-media links links-desktop">
+                        <a href=""><i class="fab fa-github itens"></i></a>
+                        <a href=""><i class="fab fa-instagram itens"></i></a>
+                        <a href=""><i class="fab fa-linkedin itens"></i></a>
+                        <a href=""><i class="fab fa-whatsapp itens"></i></a>
+                    </div>
                 </nav>
                 <div class="img-wrapper">
                     <img src="assets/capaDeveloper.jpg" alt='developer'>
@@ -34,10 +46,55 @@
                 <div class="banner">
                     <h1>Web Developer & Front End Designer</h1>
                     <p>João Victor</p>
-                    <button>Saiba mais</button>
+                    <div class="buttons">
+                        <button class="blob-btn">
+                          Saiba mais
+                          <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                            </span>
+                          </span>
+                        </button>
+                        <br/>
+                      
+                        <defs>
+                          <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                          </filter>
+                        </defs>
+                      </svg>
                 </div>
-            </header> 
+            </header>
+            
+            <div class="sidebar">
+                <nav>
+                    <div class="closed">
+                        <span>Fechar</span>
+                        <img src="assets/iconFechar.ico" alt="fechar" class="iconFechar">
+                    </div>
+                    <ul class="menu-link-mobile">
+                        <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Sobre</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Portfólio</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Contato</a></li>                    
+                    </ul>
+                    
+                </nav>
+                <div class="social-media-mobile">
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
         </div>
     </main>
 </body>
+<script src='scripts/Menu.js'></script>
 </html>
